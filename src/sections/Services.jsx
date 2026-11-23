@@ -1,6 +1,7 @@
 import { services } from '../data'
 import Icon from '../components/Icons'
 import SectionHead from './SectionHead'
+import Glass from '../components/Glass'
 
 // borda luminosa que segue o mouse
 const spotlight = e => {
@@ -20,7 +21,8 @@ export default function Services() {
         />
         <div className="services">
           {services.map((s, i) => (
-            <article className="card service" key={s.title} onPointerMove={spotlight} data-reveal>
+            <article className="card service has-glass" key={s.title} onPointerMove={spotlight} data-reveal>
+              <Glass radius={20} />
               <div className="service__top">
                 <span className="service__icon"><Icon name={s.icon} /></span>
                 <span className="service__num">0{i + 1}</span>

@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { faq } from '../data'
 import Icon from '../components/Icons'
 import SectionHead from './SectionHead'
+import Glass from '../components/Glass'
 
 export default function Faq() {
   const [open, setOpen] = useState(0)
@@ -17,7 +18,8 @@ export default function Faq() {
           {faq.map((item, i) => {
             const isOpen = open === i
             return (
-              <div className={`faq__item ${isOpen ? 'is-open' : ''}`} key={item.q} data-reveal>
+              <div className={`faq__item has-glass ${isOpen ? 'is-open' : ''}`} key={item.q} data-reveal>
+                <Glass radius={16} />
                 <button
                   className="faq__q"
                   aria-expanded={isOpen}

@@ -1,5 +1,6 @@
 import { testimonials } from '../data'
 import SectionHead from './SectionHead'
+import Glass from '../components/Glass'
 
 export default function Testimonials() {
   return (
@@ -8,7 +9,8 @@ export default function Testimonials() {
         <SectionHead eyebrow="// Depoimentos" title={<>Quem confiou, <span className="grad">recomenda.</span></>} />
         <div className="testimonials">
           {testimonials.map(t => (
-            <figure className="card quote" key={t.name} data-reveal>
+            <figure className="card quote has-glass" key={t.name} data-reveal>
+              <Glass radius={20} />
               <span className="quote__mark" aria-hidden="true">“</span>
               <blockquote>{t.text}</blockquote>
               <figcaption>

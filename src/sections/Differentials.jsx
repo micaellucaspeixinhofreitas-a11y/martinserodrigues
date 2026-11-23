@@ -2,6 +2,7 @@ import { differentials } from '../data'
 import Icon from '../components/Icons'
 import ElectricLogo from '../components/ElectricLogo'
 import SectionHead from './SectionHead'
+import Glass from '../components/Glass'
 
 export default function Differentials() {
   return (
@@ -36,7 +37,8 @@ export default function Differentials() {
           eyebrow="// Por que a Argus"
           title={<>Cem olhos em cada <span className="grad">detalhe.</span></>}
         />
-        <div className="diff__grid">
+        <div className="diff__grid has-glass">
+          <Glass radius={20} />
           {differentials.map((d, i) => (
             <div className="diff__item" key={d.title} data-reveal>
               <span className="diff__icon"><Icon name={i === 0 ? 'eye' : 'check'} size={22} /></span>

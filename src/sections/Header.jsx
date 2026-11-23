@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { nav, contact } from '../data'
 import Magnetic from '../components/Magnetic'
+import Glass from '../components/Glass'
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false)
@@ -19,7 +20,8 @@ export default function Header() {
 
   return (
     <header className={`header ${scrolled ? 'is-scrolled' : ''} ${open ? 'is-open' : ''}`}>
-      <div className="container header__inner">
+      <div className="container header__inner header__bar has-glass">
+        <Glass radius={34} backgroundOpacity={0.7} />
         <a href="#top" className="brand" aria-label="Argus — início">
           <img src={`${import.meta.env.BASE_URL}argus-white.webp`} alt="" className="brand__mark" />
           <span className="brand__name">ARGUS</span>
@@ -38,7 +40,7 @@ export default function Header() {
 
         <div className="header__actions">
           <Magnetic>
-            <a className="btn btn--ghost btn--sm" href="#contato">Iniciar projeto</a>
+            <a className="btn btn--ghost btn--sm has-glass" href="#contato"><Glass radius={21} />Iniciar projeto</a>
           </Magnetic>
           <button
             className="burger"

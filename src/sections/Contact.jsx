@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { contact } from '../data'
 import Icon from '../components/Icons'
 import Magnetic from '../components/Magnetic'
+import Glass from '../components/Glass'
 
 const types = ['Landing page', 'Site institucional', 'E-commerce', 'Sistema / web app', 'Redesign', 'Outro']
 const budgets = ['Até R$ 2 mil', 'R$ 2–5 mil', 'R$ 5–10 mil', 'Acima de R$ 10 mil']
@@ -44,7 +45,8 @@ export default function Contact() {
           </ul>
         </div>
 
-        <form className="card form" onSubmit={submit} data-reveal>
+        <form className="card form has-glass" onSubmit={submit} data-reveal>
+          <Glass radius={20} />
           <div className="form__row">
             <label className="field">
               <span>Seu nome</span>

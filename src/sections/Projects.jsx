@@ -1,6 +1,7 @@
 import { projects } from '../data'
 import Icon from '../components/Icons'
 import SectionHead from './SectionHead'
+import Glass from '../components/Glass'
 
 // leve inclinação 3D no hover
 const tilt = e => {
@@ -44,7 +45,8 @@ export default function Projects() {
         />
         <div className="projects">
           {projects.map(p => (
-            <a href="#contato" className="project" key={p.title} onPointerMove={tilt} onPointerLeave={reset} data-reveal data-hover>
+            <a href="#contato" className="project has-glass" key={p.title} onPointerMove={tilt} onPointerLeave={reset} data-reveal data-hover>
+              <Glass radius={26} />
               <Mock hue={p.hue} title={p.title} />
               <div className="project__info">
                 <div>

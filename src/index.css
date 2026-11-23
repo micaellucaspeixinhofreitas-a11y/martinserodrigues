@@ -89,6 +89,13 @@ main, .footer { position: relative; z-index: 1; }
 .preloader__bar { height: 1px; background: var(--line); margin-top: 10px; }
 .preloader__bar i { display: block; height: 100%; background: linear-gradient(90deg, var(--purple), #fff); transform: scaleX(0); transform-origin: left; }
 
+/* ============ Vidro (GlassSurface) ============ */
+.has-glass { position: relative; isolation: isolate; background: transparent !important; -webkit-backdrop-filter: none !important; backdrop-filter: none !important; }
+.has-glass > .glass-layer { position: absolute !important; inset: 0; z-index: -1; pointer-events: none; }
+.has-glass > .glass-layer .glass-surface__content { display: none; }
+.plan.is-featured.has-glass { background: linear-gradient(180deg, rgba(139,92,246,.22), rgba(139,92,246,.04)) !important; }
+.faq__item.is-open.has-glass { background: rgba(139,92,246,.08) !important; }
+
 /* ============ Buttons ============ */
 .magnetic { display: inline-block; }
 .btn {
@@ -125,7 +132,8 @@ main, .footer { position: relative; z-index: 1; }
   background: rgba(5, 4, 9, .7); backdrop-filter: blur(16px) saturate(140%); border-bottom: 1px solid var(--line);
 }
 .header.is-scrolled { padding: 10px 0; }
-.header.is-scrolled::before { opacity: 1; }
+.header.is-scrolled::before { opacity: 0; }
+.header__bar { padding: 10px 10px 10px 22px; border-radius: 34px; }
 .header__inner { position: relative; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
 .brand { display: flex; align-items: center; gap: 12px; }
 .brand__mark { width: 64px; filter: drop-shadow(0 0 12px rgba(167, 139, 250, .5)); }

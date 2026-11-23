@@ -2,6 +2,7 @@ import { plans } from '../data'
 import Icon from '../components/Icons'
 import Magnetic from '../components/Magnetic'
 import SectionHead from './SectionHead'
+import Glass from '../components/Glass'
 
 export default function Plans() {
   return (
@@ -15,7 +16,8 @@ export default function Plans() {
         />
         <div className="plans">
           {plans.map(p => (
-            <article className={`card plan ${p.featured ? 'is-featured' : ''}`} key={p.name} data-reveal>
+            <article className={`card plan has-glass ${p.featured ? 'is-featured' : ''}`} key={p.name} data-reveal>
+              <Glass radius={20} />
               {p.featured && <span className="plan__badge">Mais escolhido</span>}
               <h3 className="plan__name">{p.name}</h3>
               <p className="plan__desc">{p.desc}</p>
@@ -29,7 +31,10 @@ export default function Plans() {
                 ))}
               </ul>
               <Magnetic strength={0.2}>
-                <a href="#contato" className={`btn ${p.featured ? 'btn--primary' : 'btn--ghost'} btn--block`}>{p.cta}</a>
+                <a href="#contato" className={`btn ${p.featured ? 'btn--primary' : 'btn--ghost has-glass'} btn--block`}>
+                  {!p.featured && <Glass radius={27} />}
+                  {p.cta}
+                </a>
               </Magnetic>
             </article>
           ))}

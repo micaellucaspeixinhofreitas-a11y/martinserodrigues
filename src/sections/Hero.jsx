@@ -3,6 +3,7 @@ import { gsap } from 'gsap'
 import ParticleField from '../components/ParticleField'
 import Magnetic from '../components/Magnetic'
 import Icon from '../components/Icons'
+import Glass from '../components/Glass'
 
 const line1 = ['Sites', 'que', 'enxergam']
 const line2 = ['além', 'do', 'óbvio.']
@@ -78,7 +79,7 @@ export default function Hero({ ready }) {
               </a>
             </Magnetic>
             <Magnetic>
-              <a href="#projetos" className="btn btn--ghost">Ver projetos</a>
+              <a href="#projetos" className="btn btn--ghost has-glass"><Glass radius={27} />Ver projetos</a>
             </Magnetic>
           </div>
         </div>
