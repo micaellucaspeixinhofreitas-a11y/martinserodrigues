@@ -32,7 +32,7 @@ export default function Plans() {
               </ul>
               <Magnetic strength={0.2}>
                 <a href="#contato" className={`btn ${p.featured ? 'btn--primary' : 'btn--ghost has-glass'} btn--block`}>
-                  {!p.featured && <Glass radius={27} />}
+                  {!p.featured && <Glass radius={27} refract />}
                   {p.cta}
                 </a>
               </Magnetic>

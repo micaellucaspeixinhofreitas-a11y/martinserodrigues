@@ -282,6 +282,8 @@ const LiquidEther = ({
   autoIntensity = 2.2,
   autoResumeDelay = 1000,
   interactive = true,
+  pressureSteps = PRESSURE_STEPS,
+  maxFps = 0,
   intro = true,
   lightMode = false,
   backgroundColor = 'transparent',
@@ -312,6 +314,8 @@ const LiquidEther = ({
     autoIntensity: Math.max(0, autoIntensity),
     autoResumeDelay: Math.max(0, autoResumeDelay),
     interactive,
+    pressureSteps: clamp(Math.round(pressureSteps), 4, 64),
+    maxFps: Math.max(0, maxFps),
     intro,
     light: lightMode,
     background: background ? [...background, 1] : [0, 0, 0, 0],
@@ -509,7 +513,7 @@ const LiquidEther = ({
         bindTexture(0, targets.velocity.texture, u.uVelocity);
         gl.uniform1f(u.uWalls, walls);
       });
-      for (let iteration = 0; iteration < PRESSURE_STEPS; iteration++) {
+      for (let iteration = 0; iteration < s.pressureSteps; iteration++) {
         run(programs.pressure, targets.pressureNext, u => {
           bindTexture(0, targets.pressure.texture, u.uPressure);
           bindTexture(1, targets.divergence.texture, u.uDivergence);
@@ -577,6 +581,11 @@ const LiquidEther = ({
       raf = 0;
       if (lost) return;
       const s = settingsRef.current;
+      // limita a taxa de quadros do fluido (alivia a GPU/CPU sem mudar o visual)
+      if (s.maxFps > 0 && last && now - last < 1000 / s.maxFps - 1) {
+        raf = requestAnimationFrame(frame);
+        return;
+      }
       updatePalette(s);
       const dt = clamp((now - last) / 1000 || 0, 0, 1 / 30);
       last = Math.max(last, now);

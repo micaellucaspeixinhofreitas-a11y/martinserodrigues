@@ -1,6 +1,5 @@
 import { useEffect, useRef } from 'react'
 import { gsap } from 'gsap'
-import ParticleField from '../components/ParticleField'
 import Magnetic from '../components/Magnetic'
 import Icon from '../components/Icons'
 import Glass from '../components/Glass'
@@ -48,7 +47,6 @@ export default function Hero({ ready }) {
 
   return (
     <section className="hero" id="top" ref={root}>
-      <ParticleField />
       <div className="hero__grid" aria-hidden="true" />
       <div className="hero__glow" aria-hidden="true" />
 
@@ -79,7 +77,7 @@ export default function Hero({ ready }) {
               </a>
             </Magnetic>
             <Magnetic>
-              <a href="#projetos" className="btn btn--ghost has-glass"><Glass radius={27} />Ver projetos</a>
+              <a href="#projetos" className="btn btn--ghost has-glass"><Glass radius={27} refract />Ver projetos</a>
             </Magnetic>
           </div>
         </div>

@@ -29,13 +29,12 @@ export default function App() {
     const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches
     if (reduce) return
     const els = gsap.utils.toArray('[data-reveal]')
-    gsap.set(els, { opacity: 0, y: 40, filter: 'blur(6px)' })
+    gsap.set(els, { opacity: 0, y: 40 })
     const triggers = ScrollTrigger.batch(els, {
       start: 'top 88%',
       once: true,
       onEnter: batch => gsap.to(batch, {
-        opacity: 1, y: 0, filter: 'blur(0px)', duration: 1, ease: 'power3.out', stagger: 0.08, overwrite: true,
-        clearProps: 'filter',
+        opacity: 1, y: 0, duration: 1, ease: 'power3.out', stagger: 0.08, overwrite: true,
       }),
     })
 
@@ -69,12 +68,15 @@ export default function App() {
           autoIntensity={2.2}
           intensity={1}
           viscosity={0}
-          resolution={0.5}
+          resolution={0.25}
+          pressureSteps={12}
+          maxFps={30}
           clickBurst
           bounceEdges={false}
           intro
           lightMode={false}
           interactive={false}
+          maxDevicePixelRatio={0.5}
         />
       </div>
       <Header />
