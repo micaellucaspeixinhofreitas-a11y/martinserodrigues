@@ -193,11 +193,10 @@ p { margin: 0; }
 .scroll-cue i::after { content: ''; position: absolute; left: 0; top: -40%; width: 1px; height: 40%; background: var(--purple-2); animation: drip 1.8s var(--ease) infinite; }
 
 /* ============ Marquee ============ */
-.marquee { position: relative; border-block: 1px solid var(--line); padding: 22px 0; overflow: hidden; background: linear-gradient(90deg, var(--bg), rgba(139,92,246,.06), var(--bg)); mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent); }
-.marquee__track { display: flex; width: max-content; animation: marquee 40s linear infinite; }
-.marquee:hover .marquee__track { animation-play-state: paused; }
-.marquee__item { display: inline-flex; align-items: center; gap: 28px; padding-right: 28px; font-family: var(--display); font-size: clamp(18px, 2.2vw, 28px); font-weight: 500; color: rgba(255,255,255,.75); white-space: nowrap; }
-.marquee__item i { color: var(--purple); font-style: normal; font-size: .7em; }
+.marquee { position: relative; border-block: 1px solid var(--line); padding: 26px 0; background: linear-gradient(90deg, var(--bg), rgba(139,92,246,.07), var(--bg)); color: rgba(255,255,255,.85); }
+.marquee .logoloop__label { font-family: var(--display); font-weight: 500; font-size: 20px; letter-spacing: -0.01em; }
+.marquee .logoloop__node { filter: drop-shadow(0 0 0 transparent); transition: transform .3s cubic-bezier(.4,0,.2,1), filter .35s; }
+.marquee .logoloop__item:hover .logoloop__node { filter: drop-shadow(0 0 12px rgba(167,139,250,.7)); }
 
 /* ============ Sections ============ */
 .section { position: relative; padding: clamp(90px, 13vw, 160px) 0; }

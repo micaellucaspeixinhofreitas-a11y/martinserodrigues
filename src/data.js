@@ -23,11 +23,6 @@ export const stats = [
   { value: 24, suffix: 'h', label: 'Tempo de resposta' },
 ]
 
-export const tech = [
-  'React', 'Next.js', 'TypeScript', 'Node.js', 'GSAP', 'Three.js', 'Tailwind',
-  'Figma', 'WordPress', 'Shopify', 'Vercel', 'SEO técnico', 'Google Analytics', 'Supabase',
-]
-
 export const services = [
   {
     icon: 'landing',
