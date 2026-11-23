@@ -65,6 +65,10 @@ p { margin: 0; }
   transform: scaleX(0); transform-origin: left;
 }
 
+/* fundo fluido (LiquidEther) fixo atrás de todo o conteúdo */
+.ether-bg { position: fixed; inset: 0; z-index: 0; pointer-events: none; }
+main, .footer { position: relative; z-index: 1; }
+
 /* cursor */
 .cursor-dot, .cursor-ring { position: fixed; top: 0; left: 0; pointer-events: none; z-index: 200; border-radius: 50%; display: none; }
 .has-cursor .cursor-dot, .has-cursor .cursor-ring { display: block; opacity: 0; transition: opacity .3s; }

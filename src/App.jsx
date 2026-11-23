@@ -3,6 +3,7 @@ import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import Preloader from './components/Preloader'
 import Cursor from './components/Cursor'
+import LiquidEther from './components/LiquidEther'
 import Header from './sections/Header'
 import Hero from './sections/Hero'
 import Marquee from './sections/Marquee'
@@ -56,6 +57,25 @@ export default function App() {
       <Cursor />
       <div className="progress" aria-hidden="true" />
       <div className="noise" aria-hidden="true" />
+      {/* Fluido interativo fixo atrás do site inteiro */}
+      <div className="ether-bg" aria-hidden="true">
+        <LiquidEther
+          colors={['#5227FF', '#FF9FFC', '#000000']}
+          mouseForce={20}
+          cursorSize={100}
+          persistence={0.75}
+          autoDemo
+          autoSpeed={0.5}
+          autoIntensity={2.2}
+          intensity={1}
+          viscosity={0}
+          resolution={0.5}
+          clickBurst
+          bounceEdges={false}
+          intro
+          lightMode={false}
+        />
+      </div>
       <Header />
       <main>
         <Hero ready={ready} />
