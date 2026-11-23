@@ -19,7 +19,7 @@ export default function Faq() {
             const isOpen = open === i
             return (
               <div className={`faq__item has-glass ${isOpen ? 'is-open' : ''}`} key={item.q} data-reveal>
-                <Glass radius={16} />
+                <Glass radius={16} refract />
                 <button
                   className="faq__q"
                   aria-expanded={isOpen}

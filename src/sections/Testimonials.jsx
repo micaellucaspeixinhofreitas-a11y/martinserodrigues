@@ -10,7 +10,7 @@ export default function Testimonials() {
         <div className="testimonials">
           {testimonials.map(t => (
             <figure className="card quote has-glass" key={t.name} data-reveal>
-              <Glass radius={20} />
+              <Glass radius={20} refract />
               <span className="quote__mark" aria-hidden="true">“</span>
               <blockquote>{t.text}</blockquote>
               <figcaption>

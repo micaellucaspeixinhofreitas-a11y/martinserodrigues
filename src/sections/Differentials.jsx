@@ -38,7 +38,7 @@ export default function Differentials() {
           title={<>Cem olhos em cada <span className="grad">detalhe.</span></>}
         />
         <div className="diff__grid has-glass">
-          <Glass radius={20} />
+          <Glass radius={20} refract />
           {differentials.map((d, i) => (
             <div className="diff__item" key={d.title} data-reveal>
               <span className="diff__icon"><Icon name={i === 0 ? 'eye' : 'check'} size={22} /></span>

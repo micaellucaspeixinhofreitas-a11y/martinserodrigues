@@ -17,7 +17,7 @@ export default function Plans() {
         <div className="plans">
           {plans.map(p => (
             <article className={`card plan has-glass ${p.featured ? 'is-featured' : ''}`} key={p.name} data-reveal>
-              <Glass radius={20} />
+              <Glass radius={20} refract />
               {p.featured && <span className="plan__badge">Mais escolhido</span>}
               <h3 className="plan__name">{p.name}</h3>
               <p className="plan__desc">{p.desc}</p>

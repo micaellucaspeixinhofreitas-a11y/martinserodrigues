@@ -46,7 +46,7 @@ export default function Contact() {
         </div>
 
         <form className="card form has-glass" onSubmit={submit} data-reveal>
-          <Glass radius={20} />
+          <Glass radius={20} refract />
           <div className="form__row">
             <label className="field">
               <span>Seu nome</span>

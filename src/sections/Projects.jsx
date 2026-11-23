@@ -46,7 +46,7 @@ export default function Projects() {
         <div className="projects">
           {projects.map(p => (
             <a href="#contato" className="project has-glass" key={p.title} onPointerMove={tilt} onPointerLeave={reset} data-reveal data-hover>
-              <Glass radius={26} />
+              <Glass radius={26} refract />
               <Mock hue={p.hue} title={p.title} />
               <div className="project__info">
                 <div>

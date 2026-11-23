@@ -41,7 +41,7 @@ export default function Process() {
             <li className="step" key={s.n}>
               <span className="step__dot" aria-hidden="true" />
               <div className="step__body card has-glass">
-                <Glass radius={20} />
+                <Glass radius={20} refract />
                 <div className="step__meta">
                   <span className="step__n">{s.n}</span>
                   <span className="step__time">{s.time}</span>
