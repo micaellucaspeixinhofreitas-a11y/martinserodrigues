@@ -85,7 +85,7 @@ export default function Hero({ ready }) {
 
         <div className="hero__visual" aria-hidden="true">
           <div className="hero__orbit"><span /><span /><span /></div>
-          <img ref={logo} src="/argus-chrome.webp" alt="" className="hero__logo" />
+          <img ref={logo} src={`${import.meta.env.BASE_URL}argus-chrome.webp`} alt="" className="hero__logo" />
         </div>
       </div>
 

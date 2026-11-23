@@ -7,7 +7,7 @@ export default function Footer() {
       <div className="container">
         <div className="footer__top">
           <div className="footer__brand">
-            <img src="/argus-white.webp" alt="" className="footer__mark" />
+            <img src={`${import.meta.env.BASE_URL}argus-white.webp`} alt="" className="footer__mark" />
             <p>Design, código e performance para marcas que querem ser vistas.</p>
           </div>
           <nav className="footer__nav" aria-label="Rodapé">

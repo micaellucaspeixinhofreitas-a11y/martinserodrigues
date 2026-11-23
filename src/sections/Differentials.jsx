@@ -6,7 +6,7 @@ export default function Differentials() {
   return (
     <section className="section diff">
       <div className="diff__eye" aria-hidden="true">
-        <img src="/argus-white.webp" alt="" />
+        <img src={`${import.meta.env.BASE_URL}argus-white.webp`} alt="" />
       </div>
       <div className="container">
         <SectionHead

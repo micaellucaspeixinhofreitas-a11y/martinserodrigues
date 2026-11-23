@@ -21,7 +21,7 @@ export default function Header() {
     <header className={`header ${scrolled ? 'is-scrolled' : ''} ${open ? 'is-open' : ''}`}>
       <div className="container header__inner">
         <a href="#top" className="brand" aria-label="Argus — início">
-          <img src="/argus-white.webp" alt="" className="brand__mark" />
+          <img src={`${import.meta.env.BASE_URL}argus-white.webp`} alt="" className="brand__mark" />
           <span className="brand__name">ARGUS</span>
         </a>
 

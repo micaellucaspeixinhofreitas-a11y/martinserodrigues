@@ -27,7 +27,7 @@ export default function Preloader({ onDone }) {
   return (
     <div className="preloader" ref={root} aria-hidden="true">
       <div className="preloader__inner">
-        <img src="/argus-chrome.webp" alt="" className="preloader__logo" />
+        <img src={`${import.meta.env.BASE_URL}argus-chrome.webp`} alt="" className="preloader__logo" />
         <div className="preloader__meta">
           <span>ARGUS // INICIALIZANDO</span>
           <span ref={num}>000</span>
