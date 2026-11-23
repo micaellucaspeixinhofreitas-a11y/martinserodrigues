@@ -281,6 +281,7 @@ const LiquidEther = ({
   autoSpeed = 0.5,
   autoIntensity = 2.2,
   autoResumeDelay = 1000,
+  interactive = true,
   intro = true,
   lightMode = false,
   backgroundColor = 'transparent',
@@ -310,6 +311,7 @@ const LiquidEther = ({
     autoSpeed: Math.max(0, autoSpeed),
     autoIntensity: Math.max(0, autoIntensity),
     autoResumeDelay: Math.max(0, autoResumeDelay),
+    interactive,
     intro,
     light: lightMode,
     background: background ? [...background, 1] : [0, 0, 0, 0],
@@ -653,6 +655,7 @@ const LiquidEther = ({
     };
 
     const onPointerMove = event => {
+      if (!settingsRef.current.interactive) return;
       const spot = locate(event);
       pointer.inside = spot.inside;
       if (!spot.inside) {
@@ -683,6 +686,7 @@ const LiquidEther = ({
 
     const onPointerDown = event => {
       const s = settingsRef.current;
+      if (!s.interactive) return;
       const spot = locate(event);
       if (!spot.inside) return;
       lastInput = performance.now();

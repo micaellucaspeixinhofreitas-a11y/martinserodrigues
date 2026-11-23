@@ -57,7 +57,7 @@ export default function App() {
       <Cursor />
       <div className="progress" aria-hidden="true" />
       <div className="noise" aria-hidden="true" />
-      {/* Fluido interativo fixo atrás do site inteiro */}
+      {/* Fluido fixo atrás do site inteiro — anima sozinho, não reage ao mouse/toque */}
       <div className="ether-bg" aria-hidden="true">
         <LiquidEther
           colors={['#5227FF', '#FF9FFC', '#000000']}
@@ -74,6 +74,7 @@ export default function App() {
           bounceEdges={false}
           intro
           lightMode={false}
+          interactive={false}
         />
       </div>
       <Header />
